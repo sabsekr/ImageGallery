@@ -1,0 +1,10 @@
+<h1>{{ photo.tag_text }}</h1>
+<p>
+    <a href="{% url 'index' %}">Photo Gallery</a>
+</p>
+{% block content %}
+
+    <img src="{{ photo.image_upload.url }}"/>
+
+{% endblock %}
+

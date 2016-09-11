@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'image_gallery/style.css' %}"/>
+
+<a href="{% url 'upload_pic' %}">+add</a>
+
+{% if photo_list %}
+    <ul>
+        {% for photo in photo_list %}
+            <li>{{ photo.tag_text }}
+
+                <a href="{% url 'showphoto' photo.id %}"><img width="100" height="100"
+                                                              src="{{ photo.image_upload.url }}"/></a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No photos are available.</p>
+{% endif %}

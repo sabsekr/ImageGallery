@@ -1,0 +1,13 @@
+<form action="{% url 'upload_pic' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <p>
+        <input id="id_image" type="file" class="" name="image_upload">
+        <input id="id-image" type="text" class="" name="tag_text">
+    </p>
+
+
+    <input type="submit" value="Submit"/>
+</form>
+
+<p>
+    <a href="{% url 'index' %}">Photo Gallery</a>
+</p>
